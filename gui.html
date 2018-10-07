@@ -1,0 +1,38 @@
+<script>
+
+function sendMail()
+{
+   var mailAddress = document.getElementById('eMail').value;
+   var mailSubject = document.getElementById('sUbject').value;
+   //var mailBody=document.getElementById('mailBody').innerHTML;
+   //var mailBody = '<!DOCTYPE html><table border=0> <tr><td>First JS Gui</td></tr> </table></html>'
+   var myTemplate = '<p>test this para</p>'
+   var mailBody = encodeURIComponent(myTemplate)
+    
+   window.location="mailto:"+mailAddress+"?subject="+mailSubject+"&body="+mailBody;
+
+}
+
+</script>
+
+
+
+
+
+<html>
+<body>
+
+<h2>Send e-mail to someone</h2>
+<form method="post" enctype="text/plain">
+Subject:<br>
+<input type="text" name="name" id="sUbject" value="test"><br>
+E-mail:<br>
+<input type="text" name="mail" id="eMail" value=""><br>
+Comment:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="button" onclick="sendMail();" value="Send">
+<input type="reset" value="Reset">
+</form>
+
+</body>
+</html>
